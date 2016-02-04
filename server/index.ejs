@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MaterialSampleApp">
+<head>
+    <title><%= title %></title>
+    <script src="/lib/angular/angular.min.js"></script>
+    <script src="/lib/angular-animate/angular-animate.min.js"></script>
+    <script src="/lib/angular-aria/angular-aria.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.js"></script>
+    <script src="/lib/angular-material-icons/angular-material-icons.min.js"></script>
+    <script src="/lib/angular-route/angular-route.min.js"></script>
+    <script src="/lib/apLamb/dist/apLamb.min.js"></script>
+
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/lib/jquery-ui/jquery-ui.min.js"></script>
+    <script src="/lib/angular-dragdrop/src/angular-dragdrop.js"></script>
+
+    <script src="/app/materialSampleApp.js"></script>
+    <script src="/materialConfig.js"></script>
+
+    <script src="/app/directives/config.js"></script>
+    <script src="/app/directives/ngServiceDirective.js"></script>
+    <script src="/app/directives/userAvatar.js"></script>
+
+    <script src="/components/dashboard/dashboardCtrl.js"></script>
+    <script src="/components/leftNav/leftNavCtrl.js"></script>
+
+    <script src="/components/friends/friendsService.js"></script>
+    <script src="/components/friends/friendsCtrl.js"></script>
+
+    <script src="/components/messages/messagesService.js"></script>
+    <script src="/components/messages/messagesCtrl.js"></script>
+
+    <script src="/components/masthead/mastheadService.js"></script>
+    <script src="/components/masthead/mastheadCtrl.js"></script>
+
+    <script src="/components/routing/routingService.js"></script>
+    <script src="/components/routing/routingConfig.js"></script>
+
+    <script src="/components/settings/settingsService.js"></script>
+    <script src="/components/settings/settingsCtrl.js"></script>
+
+    <script src="/components/tabs/tabsService.js"></script>
+    <script src="/components/tabs/tabsCtrl.js"></script>
+
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body layout="row" >
+<div ng-include="'/leftNav.html'"></div>
+<div layout="column" class="relative" layout-fill role="main">
+    <div ng-include="'/components/masthead/masthead.html'"></div>
+    <md-content flex md-scroll-y>
+        <ng-view></ng-view>
+    </md-content>
+</div>
+<div ng-include="'/components/settings/settings.html'"></div>
+</body>
+</html>

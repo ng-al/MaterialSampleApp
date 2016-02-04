@@ -1,0 +1,11 @@
+// Copyright (c) Alvin Pivowar 2016
+
+angular
+    .module("MaterialSampleApp")
+    .config(
+    ["$mdThemingProvider",
+    function($mdThemingProvider) {
+        $mdThemingProvider.theme("default")
+            .primaryPalette("<%= primaryPalette %>")
+            .accentPalette("<%= accentPalette %>");
+    }]);

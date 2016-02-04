@@ -1,0 +1,15 @@
+{
+  "demo": {
+    "author": {
+      "firstName": "Alvin",
+      "lastName": "Pivowar",
+      "email": "alvin@ng-al.com"
+    },
+    "material": {
+      "primaryPalette": "blue",
+      "accentPalette": "amber"
+    },
+    "port": 3000,
+    "title": "MaterialSampleApp"
+  }
+}

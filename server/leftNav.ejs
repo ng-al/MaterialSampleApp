@@ -1,0 +1,36 @@
+<div class="left-nav" ng-controller="leftNavCtrl as vm">
+    <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+        <md-toolbar class="md-tall md-hue-2">
+            <span flex></span>
+            <div layout="column" class="md-toolbar-tools-bottom inset">
+                <user-avatar></user-avatar>
+                <span></span>
+                <div><%= author.firstName %> <%= author.lastName %></div>
+                <div><a href="mailto::<%= author.email %>?subject=MaterialSampleApp"><%= author.email %></a></div>
+            </div>
+        </md-toolbar>
+        <md-list>
+            <md-item ng-repeat="item in vm.userMenu">
+                <a ng-click="vm.onClick(item.text)">
+                    <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                        <div class="inset">
+                            <ng-md-icon icon="{{item.iconName}}"></ng-md-icon>
+                        </div>
+                        <div class="inset">{{item.text}}</div>
+                    </md-item-content>
+                </a>
+            </md-item>
+            <md-divider></md-divider>
+            <md-item ng-repeat="item in vm.adminMenu">
+                <a ng-click="vm.onClick(item.text)">
+                    <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                        <div class="inset">
+                            <ng-md-icon icon="{{item.iconName}}"></ng-md-icon>
+                        </div>
+                        <div class="inset">{{item.text}}</div>
+                    </md-item-content>
+                </a>
+            </md-item>
+        </md-list>
+    </md-sidenav>
+</div>

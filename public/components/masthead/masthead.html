@@ -1,0 +1,39 @@
+<div class="masthead" ng-controller="mastheadCtrl as vm">
+    <md-toolbar ng-if="!vm.isSearchMode">
+        <div class="md-toolbar-tools">
+            <h3>{{vm.title}}</h3>
+            <span flex></span>
+            <md-button aria-label="Search" ng-click="vm.showSearch()">
+                <ng-md-icon icon="search"></ng-md-icon>
+            </md-button>
+            <md-button aria-label="Open Settings" ng-click="vm.openSettings()">
+                <ng-md-icon icon="more_vert"></ng-md-icon>
+            </md-button>
+        </div>
+
+        <div ng-include="'/components/tabs/tabs.html'"></div>
+    </md-toolbar>
+
+    <md-toolbar class="md-hue-1" ng-if="vm.isSearchMode">
+        <div class="md-toolbar-tools">
+            <md-button ng-click="vm.hideSearch()" aria-label="Back">
+                <span layout="row">
+                    <ng-md-icon layout="column" layout-align="end" icon="arrow_back"></ng-md-icon>
+                    <span layout="column" layout-align="end">&nbsp;Back</span>
+                </span>
+            </md-button>
+            <h3 flex="5">&nbsp;</h3>
+
+            <md-input-container flex>
+                <label>&nbsp;</label>
+                <input ng-model="vm.filter" placeholder="enter search">
+            </md-input-container>
+            <md-button aria-label="Search" ng-click="vm.doSearch()">
+                <ng-md-icon icon="search"></ng-md-icon>
+            </md-button>
+            <md-button aria-label="Open Settings" ng-click="vm.openSettings()">
+                <ng-md-icon icon="more_vert"></ng-md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+</div>

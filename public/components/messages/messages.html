@@ -1,0 +1,35 @@
+<div ng-controller="messagesCtrl as vm">
+    <md-card flex-gt-sm="90" flex-gt-md="80">
+        <md-card-content>
+            <md-list>
+                <md-item ng-repeat="item in vm.messages" style="width:300px;">
+                    <div>
+                        <md-item-content >
+                            <div class="md-tile-left inset" hide-sm>
+                                <user-avatar></user-avatar>
+                            </div>
+                            <div class="md-tile-content">
+                                <h3>{{item.sender.name}}</h3>
+                                <h4>{{item.date | date: 'fullDate'}} {{item.time}}</h4>
+                                <p>{{item.text}}</p>
+                            </div>
+                        </md-item-content>
+                    </div>
+                    <md-divider md-inset hide-sm ng-if="!$last"></md-divider>
+                    <md-divider hide-gt-sm ng-if="!$last"></md-divider>
+                </md-item>
+                <md-divider></md-divider>
+                <md-item layout class="inset">
+                    <md-button layout layout-align="start center" flex="10" class="md-primary" ng-click="vm.nextPage()">
+                        <ng-md-icon icon="arrow_forward"></ng-md-icon>
+                        More
+                    </md-button>
+                    <div flex="85"></div>
+                    <md-button class="md-fab md-fab-right" title="Generate Message" aria-label="Add" ng-click="vm.generateMessage()">
+                        <ng-md-icon icon="add"></ng-md-icon>
+                    </md-button>
+                </md-item>
+            </md-list>
+        </md-card-content>
+    </md-card>
+</div>

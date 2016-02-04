@@ -1,0 +1,5 @@
+.idea
+node_modules
+public/app/directives/config.js
+public/app/directives/ngServiceDirective.js
+public/lib/

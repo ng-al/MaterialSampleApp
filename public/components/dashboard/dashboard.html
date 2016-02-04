@@ -1,0 +1,16 @@
+<div class="dashboard" ng-controller="dashboardCtrl as vm">
+    <md-card ng-repeat="item in vm.items">
+        <img ng-src="{{item.image}}" class="md-card-image">
+        <md-card-title>
+            <md-card-title-text>
+                <div class="md-headline">{{item.title}}: {{item.count}}</div>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button ng-click="vm.go(item.title)">
+                GO
+                <img src="/images/go-arrow.png">
+            </md-button>
+        </md-card-actions>
+    </md-card>
+</div>

@@ -1,0 +1,5 @@
+<div ng-controller="tabsCtrl as vm">
+    <md-tabs class="md-primary" md-stretch-tabs ng-if="vm.hasTabs">
+        <md-tab ng-repeat="tab in vm.tabs" md-active="tab.isActive" md-on-select="vm.onTabSelect(tab.text)">{{tab.text}}</md-tab>
+    </md-tabs>
+</div>
