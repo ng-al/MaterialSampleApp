@@ -56,6 +56,14 @@
                     messagesService.setSearchFilter(filter);
                 });
 
+                bus.subscribe("messages.add", function() {
+                    tabsService.select("Recent");
+                    vm.page = 1;
+                    messagesService.getMessages(true, vm.page, vm.pageSize).then(function(messages) {
+                        vm.messages = messages;
+                    });
+                });
+
                 bus.subscribe("messages.filter", function() {
                     var isRecent = (vm.selectedTab.text === "Recent");
 

@@ -165,6 +165,10 @@
                         message = new Message(scope.$id, messageSender, getRandomDate(), getRandomTime(), getRandomText(friend));
                         _messages.push(message);
                     }
+
+                    _messages.sort(function(a, b) {
+                        return b.date.getTime() - a.date.getTime();
+                    });
                 });
             }
 
